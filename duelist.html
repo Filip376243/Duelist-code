@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duelist</title>
+    <link rel="stylesheet" href="duelist.css">
+</head>
+<body>
+    
+<div class="menu display">
+    <div class="option" id="end" onclick=""><span>END</span></div>
+    <div class="option" id="credits" onclick=""><span>CREDITS</span></div>
+    <div class="option" id="achievement" onclick=""><span>ACHIEVEMENT</span></div>
+    <div class="option" id="options" onclick=""><span>OPTIONS</span></div>
+    <div class="option" id="upgrade" onclick=""><span>UPGRADE</span></div>
+    <div class="option" id="play" onclick="quer('menu', 'start', 'header')"><span>PLAY</span></div>
+</div>
+<div class="start invisible">
+    <div class="level" id="skibidi" onclick=""><span>Skibidi</span></div>
+    <div class="level" id="hell" onclick=""><span>Hell</span></div>
+    <div class="level" id="clouds" onclick=""><span>Clouds</span></div>
+    <div class="level" id="castle" onclick=""><span>Castle</span></div>
+    <div class="level" id="plains" onclick="quer('start', 'selection')"><span>Plains</span></div>
+</div>
+<div class="selection invisible">
+    <span>PLAINS</span>
+    <div class="features">
+        <div class="lev" onclick="showClarification(1)">Level 1</div>
+        <div class="lev" onclick="showClarification(3)">Level 3</div>
+        <div class="lev" onclick="showClarification(3)">Level 3</div>
+        <div class="lev" onclick="showClarification(4)">Level 4</div>
+        <div class="lev" onclick="showClarification(5)">Level 5</div>
+        <div class="lev" onclick="showClarification(5)">Level 5</div>
+        <div class="lev" onclick="showClarification(2)">Level 2</div>
+        <div class="lev" onclick="showClarification(2)">Level 2</div>
+        <div class="lev" onclick="showClarification(3)">Level 3</div>
+        <div class="lev" onclick="showClarification(4)">Level 4</div>
+        <div class="lev" onclick="showClarification(5)">Level 5</div>
+        <div class="lev" onclick="showClarification(5)">Level 5</div>
+    </div>
+    <div class="skulls">
+        <div class="skull-normal" onclick="skullNormal()">
+            <img src="https://cdn.glitch.global/1ea19045-4767-4937-982b-a6d7a7d2c370/skull-normal.png?v=1724255688772">
+            <span>Normal</span>
+        </div>
+        <div class="skull-hard" onclick="skullHard()">
+            <img src="https://cdn.glitch.global/1ea19045-4767-4937-982b-a6d7a7d2c370/skull-hard.png?v=1724255687363">
+            <span>Hard</span>
+        </div>
+        <div class="skull-insane" onclick="skullInsane()">
+            <img src="https://cdn.glitch.global/1ea19045-4767-4937-982b-a6d7a7d2c370/skull-insane.png?v=1724255688166">
+            <span>Insane</span>
+        </div>
+    </div>
+</div>
+<div class="yes-no invisible">
+    <p>Level <span id="feat">1</span></p>
+    <p id="clarifyDifficulty">Normal</p>
+    <div class="yes-cancel">
+        <span class="play" onclick="level()">PLAY</span>
+        <span class="cancel" onclick="cancelClarification()">CANCEL</span>
+    </div>
+</div>
+<div class="header invisible">
+    <div class="health display">
+        <div class="hp"></div>
+    </div>
+    <span class="bronze">Bronze: <span id="bronze">0</span></span>
+    <span class="silver">Silver: <span id="silver">0</span></span>
+    <span class="gold">Gold: <span id="gold">0</span></span>
+    <span class="time display">Time: <span id="time">0</span> s</span>
+</div>
+<div class="area invisible layer">
+    <div class="wave invisible">
+        <span>Wave <span id="wave">1</span></span>
+    </div>
+    <div class="player" id="player">
+        <img src='https://cdn.glitch.global/7d12293c-eca2-4380-9c1e-90179c7585a8/arca.png?v=1724142983773' id="player-image">
+        <img src='https://cdn.glitch.global/7d12293c-eca2-4380-9c1e-90179c7585a8/sword.png?v=1724143045628' id="sword">
+    </div>
+    <img src='https://cdn.glitch.global/7d12293c-eca2-4380-9c1e-90179c7585a8/thomb.png?v=1724143055901' class="thomb" id="thomb1">
+    <img src='https://cdn.glitch.global/7d12293c-eca2-4380-9c1e-90179c7585a8/thomb.png?v=1724143055901' class="thomb" id="thomb2">
+    <img src='https://cdn.glitch.global/7d12293c-eca2-4380-9c1e-90179c7585a8/thomb.png?v=1724143055901' class="thomb" id="thomb3">
+    <img src='https://cdn.glitch.global/7d12293c-eca2-4380-9c1e-90179c7585a8/thomb.png?v=1724143055901' class="thomb" id="thomb4">    
+    <div class="nothing invisible" id="nothing"></div>
+</div>
+<div class="sign invisible">
+    <div class="current-wave">Wave <span id="current-wave">1</span></div>
+    <div class="counter"><span id="counter">3</span></div>
+</div>
+<div class="shop invisible">
+    <div class="start-wave">
+        <span>START</span>
+        <span>Wave <span>2</span></span>
+    </div>
+    <div class="choices">
+        <div class="choices-plinko">
+            <img onclick='quer("shop", "plinko")' src="https://cdn.glitch.global/1ea19045-4767-4937-982b-a6d7a7d2c370/heal-plus.png?v=1724187639539">
+            <span>Plinko</span>
+        </div>
+        <div class="choices-blackjack">
+            <img src="https://cdn.glitch.global/1ea19045-4767-4937-982b-a6d7a7d2c370/bucks.png?v=1725694251369">
+            <span>Blackjack</span>
+        </div>
+        <div class="choices-luck">
+            <img src="https://cdn.glitch.global/7d12293c-eca2-4380-9c1e-90179c7585a8/sword.png?v=1724143045628">
+            <span>Luck</span>
+        </div>
+    </div>
+</div>
+<div class="plinko invisible">
+
+</div>
+<div class="game-over invisible">
+    <span class="go">GAME OVER</span>
+    <span class="upg" onclick="quer('game-over', 'upgration')">UPGRADE</span>
+    <span class="men" onclick="quer('game-over', 'menu')">MENU</span>
+</div>
+<div class="upgration invisible">
+    <span class="thrst">INVENTORY</span>
+    <span>ABILITIES</span>
+    <span>WEAPONS</span>
+    <div class="triangle">
+        <div class="triangle-head"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="weapons-sword">
+            <img id='weapons-sword' src="https://cdn.glitch.global/1ea19045-4767-4937-982b-a6d7a7d2c370/lighting.png?v=1725206028211">
+        </div>
+        <div class="abilities-lighting">
+            <img id="abilities-lighting" src="https://cdn.glitch.global/7d12293c-eca2-4380-9c1e-90179c7585a8/sword.png?v=1724143045628">
+        </div>
+        <div class="character-profile">
+            <img id='character-profile' src="https://cdn.glitch.global/7d12293c-eca2-4380-9c1e-90179c7585a8/arca.png?v=1724142983773">
+        </div>
+    </div>
+    <span>CHARACTER</span>
+</div>
+
+<script src="duelist.js"></script>
+</body>
+</html>

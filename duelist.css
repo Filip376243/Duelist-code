@@ -1,0 +1,580 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body {
+    overflow: hidden;
+}
+.header {
+    position: fixed;
+    width: 100vw;
+    height: 10%;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: -10%;
+    z-index: 10;
+    align-items: center;
+}
+.wave {
+    position: fixed;
+    width: 20vw;
+    left: 40vw;
+    right: 40vw;
+    top: 20px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #200;
+}
+.wave span {
+    text-align: center;
+    width: 100%;
+}
+.current-wave {
+    width: 100vw;
+    font-size: 64px;
+    color: #200;
+    font-weight: 700;
+    position: absolute;
+    text-align: center;
+    top: 300px;
+    opacity: 1;
+}
+.counter {
+    position: absolute;
+    font-size: 64px;
+    color: #200;
+    text-align: center;
+    font-weight: 700;
+    width: 100%; 
+    top: 370px;
+    opacity: 1;
+}
+.area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200vw;
+    height: 100vh;
+    background-image: url('https://cdn.glitch.global/7d12293c-eca2-4380-9c1e-90179c7585a8/background.png?v=1724142990286');
+    flex-direction: column;
+    opacity: .8;
+}
+.silver, .gold, .bronze, .time {
+    width: 10%;
+    font-size: 20px;
+    margin-top: 10px;
+}
+#bronze, #silver, #gold {
+    margin-left: 0.5em;
+}
+.bronze {
+    margin-left: auto;
+}
+#time {
+    margin-left: 1em;
+    margin-right: 0.2em;
+}
+.health {
+    width: 404px;
+    height: 16px;
+    background: #200;
+    border-radius: 8px;
+    border: 2px solid #200;
+    margin-top: 10px;
+    margin-left: 8%;
+    margin-right: 20%;
+}
+.hp {
+    width: 400px;
+    height: 12px;
+    border-radius: 6px;
+    background: #a00;
+}
+.player {
+    z-index: 2;
+    position: absolute;
+    left: 40vw;
+    top: 40vh;
+}
+#player-image {
+    width: 72px;
+    height: 72px;
+    margin-right: -32px;
+}
+#sword {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 12px;
+}
+.invisible {
+    display: none;
+}
+.display {
+    display: flex;
+}
+.menu, .start {
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+}
+.menu {
+    background: #c88;
+}
+.start {
+    background: #844;
+}
+.option, .level {
+    border: 2px solid #200;
+    border-radius: 4px 4px 0 0;
+    font-size: 32px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+.option {
+    height: 15%;
+}
+.level {
+    height: 18%;
+}
+.option span, .level span {
+    width: 100%;
+    text-align: center;
+}
+.option:nth-of-type(1) {
+    margin-top: auto;
+    width: 15%;
+    background: #cc0;
+}
+.option:nth-of-type(2) {
+    width: 20%;
+    background: #c0c;
+}
+.option:nth-of-type(3) {
+    width: 25%;
+    background: #0cc;
+}
+.option:nth-of-type(4) {
+    width: 30%;
+    background: #0c0;
+    font-size: 36px;
+}
+.option:nth-of-type(5) {
+    width: 35%;
+    background: #00c;
+    font-size: 40px;
+}
+.option:nth-of-type(6) {
+    width: 40%;
+    background: #c00;
+    font-size: 48px;
+}
+
+.level:nth-of-type(1) {
+    margin-top: auto;
+    width: 20%;
+    background: salmon;
+}
+.level:nth-of-type(2) {
+    width: 25%;
+    background: red;
+}
+.level:nth-of-type(3) {
+    width: 30%;
+    background: skyblue;
+}
+.level:nth-of-type(4) {
+    width: 35%;
+    background: #233;
+}
+.level:nth-of-type(5) {
+    width: 40%;
+    background: greenyellow;
+}
+
+.thomb {
+    position: absolute;
+    width: 120px;
+}
+#thomb1 {
+    left: 85vw;
+    top: 10vh;
+}
+#thomb2 {
+    left: 90vw;
+    top: 75vh;
+}
+#thomb3 {
+    left: 10vw;
+    top: 15vh;
+}
+#thomb4 {
+    left: 5vw;
+    top: 80vh;
+}
+.game-over {
+    position: absolute;
+    background: black;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding-top: 220px;
+    align-items: center;
+}
+.go, .upg, .men {
+    text-align: center;
+    position: relative;
+    font-size: 72px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+.go {
+    color: red;
+}
+.upg {
+    color: blue;
+    cursor: pointer;
+}
+.men {
+    color: yellow;
+    cursor: pointer;
+}
+.coin {
+    position: absolute;
+    z-index: 2;
+}
+.shop {
+    width: 100vw;
+    height: 100vh;
+    background: #600;
+    flex-direction: column;
+}
+.start-wave {
+    color: #fcc;
+    padding-top: 15px;
+    width: 20vw;
+    height: 20vh;
+    margin-left: 40vw;
+    margin-right: 40vw;
+    margin-bottom: 25vh;
+    background: #200;
+    border: 2px solid white;
+    border-radius: 0 0 8px 8px;
+    font-size: 48px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.choices {
+    display: flex;
+    width: 100vw;
+    height: 40vh;
+}
+.choices-plinko, .choices-blackjack, .choices-luck {
+    width: 20vw;
+    height: 40vh;
+    margin-left: 10vw;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.choices-plinko img, .choices-blackjack img, .choices-luck img {
+    width: 20vw;
+}
+.choices-plinko span, .choices-blackjack span, .choices-luck span {
+    font-size: 36px;
+    color: #fcc;
+    width: 20vw;
+    text-align: center;
+    margin-top: auto;
+}
+.plinko {
+    width: 100vw;
+    height: 100vh;
+    background: #0c0;
+}
+.selection {
+    background: olive;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+}
+.yes-no {
+    position: fixed;
+    left: 35vw;
+    top: 40vh;
+    width: 30vw;
+    height: 28vh;
+    border-radius: 6px;
+    border: 2px solid whitesmoke;
+    background: #faa;
+    z-index: 15;
+    flex-direction: column;
+}
+.yes-cancel {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+}
+.yes-no p {
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(24px, 2vw, 36px);
+    margin-top: 1vh;
+}
+.yes-no p:nth-of-type(2) {
+    margin-bottom: 2vh;
+}
+.play, .cancel {
+    border: 3px solid #200;
+    width: 10vw;
+    height: 100%;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: clamp(28px, 2vw, 48px);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: whitesmoke;
+    cursor: pointer;
+}
+.play {
+    background: red;
+    margin-right: 2vw;
+    margin-left: 3vw
+}
+.cancel {
+    background: #211;
+    margin-left: 2vw;
+    margin-right: 3vw;
+}
+.selection span {
+    width: 100%;
+    height: 10vh;
+    font-size: clamp(32px, 3vw, 72px);
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+}
+.features {
+    width: 60vw;
+    height: 50vh;
+    background: black;
+    margin-bottom: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+.skulls {
+    display: flex;
+    flex-direction: row;
+    gap: 10vw;
+    height: 20vh;
+    position: relative;
+}
+.skull-normal, .skull-hard, .skull-insane {
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding-top: 1vh;
+}
+.skull-normal {
+    background: #0a0;
+}
+.skulls span {
+    font-size: clamp(20px, 2vw, 36px);
+    position: absolute;
+    top: 10vh;
+}
+.skull-normal img {
+    width: 70%;
+}
+.skull-hard img {
+    width: 50%;
+}
+.skull-insane img {
+    width: 90%;
+}
+.lev {
+    position: relative;
+    width: 10vw;
+    height: 50%;
+    border: 2px solid whitesmoke;
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    font-size: clamp(20px, 2vw, 36px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lev:hover {
+    color: white;
+    background: #222;
+}
+.lev:nth-of-type(2) {
+    border-right: none;
+}
+.lev:nth-of-type(3) {
+    border-left: none;
+    border-bottom: none;
+}
+.lev:nth-of-type(4) {
+    border-bottom: none;
+}
+.lev:nth-of-type(5) {
+    border-bottom: none;
+    border-right: none;
+}
+.lev:nth-of-type(6) {
+    border-bottom: none;
+    border-left: none;
+}
+.lev:nth-of-type(7) {
+    border-right: none;
+}
+.lev:nth-of-type(8) {
+    border-left: none;
+}
+.lev:nth-of-type(9) {
+    border-top: none;
+}
+.lev:nth-of-type(10) {
+    border-top: none;
+}
+.lev:nth-of-type(11) {
+    border-top: none;
+    border-right: none;
+}
+.lev:nth-of-type(12) {
+    border-top: none;
+    border-left: none;
+}
+.upgration {
+    background: #00c;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+}
+.upgration span {
+    position: relative;
+    font-size: 32px;
+    color: black;
+    font-weight: 600;
+}
+.upgration img {
+    cursor: pointer;
+}
+.upgration span:nth-of-type(1) {
+    position: relative;
+    top: 1vh;
+    font-size: 52px;
+    font-weight: 600;
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 10vh
+}
+.upgration span:nth-of-type(2) {
+    position: absolute;
+    top: 18vh;
+    left: 22vw;
+}
+.upgration span:nth-of-type(3) {
+    position: absolute;
+    top: 18vh;
+    left: 68vw;
+}
+.upgration span:nth-of-type(4) {
+    position: absolute;
+    top: 84vh;
+    left: 42vw;
+}
+.triangle {
+    position: absolute;
+    width: 60vw;
+    height: 50vh;
+    top: 28vh;
+    left: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+.line{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 28vw;
+    height: 0.5vh;
+    background: black;
+    transform-origin: top left;
+    transform: rotate(-30deg);    
+}
+.line:nth-of-type(2) {
+    transform: rotate(90deg);
+    width: 15vw;
+}
+.line:nth-of-type(3) {
+    transform: rotate(210deg);
+}
+.triangle-head {
+    border-radius: 50%;
+    position: absolute;
+    width: 8vw;
+    height: 8vw;
+    background: black;
+    left: calc(50% - 4vw);
+    top: calc(50% - 4vw);
+    z-index: 1;
+}
+.weapons-sword, .abilities-lighting, .character-profile {
+    position: fixed;
+    background: #222;
+    width: 6vw;
+    height: 6vw;
+    border-radius: 50%;
+    padding: auto;
+}
+.weapons-sword img {
+    margin-left: 15%;
+    margin-top: 10%;
+    width: 80%;
+}
+.abilities-lighting img {
+    margin-left: 10%;
+    margin-top: 10%;
+    width: 80%;
+}
+.character-profile img {
+    margin-left: 10%;
+    margin-top: 5%;
+    width: 80%;
+}
+.weapons-sword {
+    left: 24vw;
+    top: 24vh;
+}
+.abilities-lighting {
+    left: 71vw;
+    top: 24vh;
+}
+.character-profile {
+    left: 47vw;
+    top: 72vh;
+}
+.nothing {
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    position: absolute;
+}
