@@ -29,6 +29,8 @@ const lightingImage = 'https://cdn.glitch.global/1ea19045-4767-4937-982b-a6d7a7d
 let difficulty = 1;
 let Level = 1;
 
+//another comment
+
 class Game {
     constructor() {
         this.wave = 1;
