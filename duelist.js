@@ -40,7 +40,7 @@ class Game {
     update() {
         if (this.run) {
             this.fight.update();
-            //some code
+            //some code + another code
         }
     }
 }
