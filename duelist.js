@@ -33,7 +33,7 @@ let Level = 3;
 
 class Game {
     constructor() {
-        this.wave = 1;
+        this.wave = 4;
         this.fight;
         this.run = false;
     }
