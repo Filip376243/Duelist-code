@@ -29,6 +29,9 @@ const lightingImage = 'https://cdn.glitch.global/1ea19045-4767-4937-982b-a6d7a7d
 let Level = 999;
 let bom = 23;
 
+
+let add = 22
+//another comment
 //another comment
 
 class Game {
@@ -46,6 +49,7 @@ class Game {
 }
 
 console.log('ahoj jak se mas')
+console.log('moja potajapa')
 
 class Fight {
     constructor(game, number, diffic) {
