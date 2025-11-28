@@ -28,6 +28,7 @@ const lightingImage = 'https://cdn.glitch.global/1ea19045-4767-4937-982b-a6d7a7d
 
 let difficulty = 4234;
 let Level = 999;
+let bom = 23;
 
 //another comment
 
