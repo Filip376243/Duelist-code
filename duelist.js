@@ -27,7 +27,7 @@ const bucksImage = 'https://cdn.glitch.global/1ea19045-4767-4937-982b-a6d7a7d2c3
 const lightingImage = 'https://cdn.glitch.global/1ea19045-4767-4937-982b-a6d7a7d2c370/lighting.png?v=1725206028211';
 
 let Level = 999;
-let bom = 23;
+let bom = 235;
 
 
 let add = 22
