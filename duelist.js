@@ -27,10 +27,6 @@ const bucksImage = 'https://cdn.glitch.global/1ea19045-4767-4937-982b-a6d7a7d2c3
 const lightingImage = 'https://cdn.glitch.global/1ea19045-4767-4937-982b-a6d7a7d2c370/lighting.png?v=1725206028211';
 
 let difficulty = 13133;
-let Level = 3345;
-let difficulty = 4234;
-let Level = 999;
-let bom = 23;
 
 //another comment
 
